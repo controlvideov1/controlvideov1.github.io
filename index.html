@@ -410,6 +410,7 @@ div[class^='image-gallery-slide-'] {
           <li><a href="#ControlVideo on canny edges">ControlVideo on canny edges</a></li>
           <li><a href="#ControlVideo on human poses">ControlVideo on human poses</a></li>
           <li><a href="#Long video generation">Long video generation</a></li>
+          <li><a href="#Novel view generation">Novel view generation</a></li>
           <li><a href="#Limitations">Limitations</a></li>
         </ul>
         <li><a href="#Qualitative comparisons">Qualitative comparisons</a></li>
@@ -420,6 +421,8 @@ div[class^='image-gallery-slide-'] {
         </ul>
         <li><a href="#Ablation studies">Ablation studies</a></li>
         <ul>
+          <li><a href="#Non-deterministric DDPM sampler">Non-deterministric DDPM sampler</a></li>
+          <li><a href="#Trade-off between text prompt and motion">Trade-off between text prompt and motion</a></li>
           <li><a href="#Effect of fully cross-frame interaction and interleaved-frame smoother">Effect of fully cross-frame interaction and interleaved-frame smoother</a></li>
           <li><a href="#Which timesteps does interleaved-frame smoother perform">Which timesteps does interleaved-frame smoother perform</a></li>
           <li><a href="#How many timesteps are used in interleaved-frame smoother">How many timesteps are used in interleaved-frame smoother</a></li>
@@ -558,7 +561,43 @@ div[class^='image-gallery-slide-'] {
       <td align="center">"Hulk is dancing on the beach, cartoon style."</td>
     </tr>
   </table>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/rebuttal_results/additional_long_videos/canny+airplane.mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/additional_long_videos/depth+eiffel-flyover.mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/additional_long_videos/depth+seagull-flying.mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td><video src="videos/rebuttal_results/additional_long_videos/An_airplane_flying_on_the_grasslands..mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/additional_long_videos/Towers_on_grasslands,_cartoon_style..mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/additional_long_videos/A_beautiful_bird_flying_in_the_clear_sky..mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td align="center"><span style="color: blue;">"An airplane flying on the grasslands."</span></td>
+      <td align="center"><span style="color: blue;">"Towers on grasslands, cartoon style."</span></td>
+      <td align="center"><span style="color: blue;">"A beautiful bird flying in the clear sky."</span></td>
+    </tr>
+  </table>
   <hr>
+
+  <h3 id="Novel view generation" align="center">
+    <span style="color: blue;">Novel view generation</span>
+  </h3>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/rebuttal_results/novel_view/turtle-short/depth_midas_condition.mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/novel_view/turtle-short/A_turtle,_high_defination,_4k..mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/novel_view/teddy/depth_midas_condition.mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/novel_view/teddy/A_plush_teddy_bear,_high_defination,_4k..mp4" style="width: 200px; height: 200px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td align="center">Depth Maps</td>
+      <td align="center">A_turtle, high defination, 4k.</td>
+      <td align="center">Depth Maps</td>
+      <td align="center">A plush teddy bear, high defination, 4k.</td>
+    </tr>
+  </table>
+<hr>
 
   <h3 id="Limitations" align="center">
     Limitations
@@ -591,6 +630,8 @@ div[class^='image-gallery-slide-'] {
         <td><video src="videos/comparisons/depth/hike_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/tuneavideo_A_daring_man_is_scaling_a_treacherous_and_jagged_peak_in_the_alpine_wilderness..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/text2video-zero_A_daring_man_is_scaling_a_treacherous_and_jagged_peak_in_the_alpine_wilderness..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_hike/vid2vid+A_daring_man_is_scaling_a_treacherous_and_jagged_peak_in_the_alpine_wilderness..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_hike/fatezero+A_daring_man_is_scaling_a_treacherous_and_jagged_peak_in_the_alpine_wilderness..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/controlvideo_A_daring_man_is_scaling_a_treacherous_and_jagged_peak_in_the_alpine_wilderness..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -598,6 +639,8 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
       </tr>
     </table>
@@ -609,6 +652,8 @@ div[class^='image-gallery-slide-'] {
         <td><video src="videos/comparisons/depth/mbike-trick_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/tuneavideo_A_daring_man_performing_gravity-defying_stunts_on_a_high-speed,_blue_motorbike_in_an_empty_parking_lot..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/text2video-zero_A_daring_man_performing_gravity-defying_stunts_on_a_high-speed,_blue_motorbike_in_an_empty_parking_lot..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_mbike_trick/vid2vid+A_daring_man_performing_gravity-defying_stunts_on_a_high-speed,_blue_motorbike,_in_an_empty_parking_lot..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_mbike_trick/fatezero+A_daring_man_performing_gravity-defying_stunts_on_a_high-speed,_blue_motorbike,_in_an_empty_parking_lot..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/controlvideo_A_daring_man_performing_gravity-defying_stunts_on_a_high-speed,_blue_motorbike_in_an_empty_parking_lot..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -616,6 +661,8 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
       </tr>
     </table>
@@ -626,6 +673,8 @@ div[class^='image-gallery-slide-'] {
         <td><video src="videos/comparisons/depth/car-turn_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/tuneavideo_A_dusty_old_jeep_was_making_its_way_down_the_winding_forest_road,_creaking_and_groaning_with_each_bump_and_turn..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/text2video-zero_A_dusty_old_jeep_was_making_its_way_down_the_winding_forest_road,_creaking_and_groaning_with_each_bump_and_turn..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_turn/vid2vid+A_dusty_old_jeep_was_making_its_way_down_the_winding_forest_road,_creaking_and_groaning_with_each_bump_and_turn..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_turn/fatezero+A_dusty_old_jeep_was_making_its_way_down_the_winding_forest_road,_creaking_and_groaning_with_each_bump_and_turn..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/depth/controlvideo_A_dusty_old_jeep_was_making_its_way_down_the_winding_forest_road,_creaking_and_groaning_with_each_bump_and_turn..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -633,21 +682,68 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
       </tr>
     </table>
+
+    <p align="center"><span style="color: blue;">Text Prompt: A gigantic yellow jeep slowly turns on a wide, smooth road in the city.</span></p>
+    <table align="center" style="width: 10%;">
+      <tr>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/depth_midas_condition.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/tav+A_gigantic_yellow_jeep_slowly_turns_on_a_wide,_smooth_road_in_the_city..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/tvz+A_gigantic_yellow_jeep_slowly_turns_on_a_wide,_smooth_road_in_the_city..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/vid2vid+A_gigantic_yellow_jeep_slowly_turns_on_a_wide,_smooth_road_in_the_city..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/fatezero+A_gigantic_yellow_jeep_slowly_turns_on_a_wide,_smooth_road_in_the_city..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/depth_car_roundabout/ours+A_gigantic_yellow_jeep_slowly_turns_on_a_wide,_smooth_road_in_the_city..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      </tr>
+      <tr>
+        <td align="center"><span style="color: blue;">Source Video</span></td>
+        <td align="center"><span style="color: blue;">Structure Sequence</span></td>
+        <td align="center"><span style="color: blue;">Tune-A-Video</span></td>
+        <td align="center"><span style="color: blue;">Text2Video-Zero</span></td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
+        <td align="center"><span style="color: blue;">ControlVideo (Ours)</span></td>
+      </tr>
+    </table>
+<p align="center"><span style="color: blue;">Text Prompt: A contented cow ambles across the dewy, verdant pasture.</span></p>
+<table align="center" style="width: 10%;">
+  <tr>
+    <td><video src="videos/rebuttal_results/failure_cases/cows/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/failure_cases/cows/depth_midas_condition.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/more_videos/depth_cows/tav+A_contented_cow_ambles_across_the_dewy,_verdant_pasture..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/more_videos/depth_cows/tvz+A_contented_cow_ambles_across_the_dewy,_verdant_pasture..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/more_videos/depth_cows/vid2vid+A_contented_cow_ambles_across_the_dewy,_verdant_pasture..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/more_videos/depth_cows/fatezero+A_contented_cow_ambles_across_the_dewy,_verdant_pasture..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    <td><video src="videos/rebuttal_results/more_videos/depth_cows/ours+A_contented_cow_ambles_across_the_dewy,_verdant_pasture..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+  </tr>
+  <tr>
+    <td align="center"><span style="color: blue;">Source Video</span></td>
+    <td align="center"><span style="color: blue;">Structure Sequence</span></td>
+    <td align="center"><span style="color: blue;">Tune-A-Video</span></td>
+    <td align="center"><span style="color: blue;">Text2Video-Zero</span></td>
+    <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+    <td align="center"><span style="color: blue;">FateZero</span></td>
+    <td align="center"><span style="color: blue;">ControlVideo (Ours)</span></td>
+  </tr>
+</table>
 <hr>
-    
+
     <h3 id="Canny edge" align="center">
       Canny edge
     </h3>
-    <p align="center">Text Prompt: A curious golden dog curiously wanders on the rocky mountain trail.</p>
+    <p align="center"Text Prompt: A curious golden dog curiously wanders on the rocky mountain trail.</p>
     <table align="center" style="width: 10%;">
       <tr>
         <td><video src="videos/comparisons/canny/dogoriginal.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/dog_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/tuneavideo_A_curious_golden_dog_curiously_wanders_on_the_rocky_mountain_trail..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/text2video-zero_A_curious_golden_dog_curiously_wanders_on_the_rocky_mountain_trail..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_dog/vid2vid+A_curious_golden_dog_curiously_wanders_on_the_rocky_mountain_trail..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_dog/fatezero+A_curious_golden_dog_curiously_wanders_on_the_rocky_mountain_trail..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/controlvideo_A_curious_golden_dog_curiously_wanders_on_the_rocky_mountain_trail..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -655,6 +751,8 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
       </tr>
     </table>
@@ -666,6 +764,8 @@ div[class^='image-gallery-slide-'] {
         <td><video src="videos/comparisons/canny/elephant_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/tuneavideo_A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/text2video-zero_A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_elephant/vid2vid+A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_elephant/fatezero+A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/controlvideo_A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -673,6 +773,8 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
       </tr>
     </table>
@@ -684,6 +786,8 @@ div[class^='image-gallery-slide-'] {
         <td><video src="videos/comparisons/canny/car-shadow_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/tuneavideo_A_shiny_silver_vehicle_gracefully_maneuvers_towards_a_modern_glass_building..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/text2video-zero_A_shiny_silver_vehicle_gracefully_maneuvers_towards_a_modern_glass_building..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_car_shadow/vid2vid+A_shiny_silver_vehicle_gracefully_maneuvers_towards_a_modern_glass_building..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_car_shadow/fatezero+A_shiny_silver_vehicle_gracefully_maneuvers_towards_a_modern_glass_building..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
         <td><video src="videos/comparisons/canny/controlvideo_A_shiny_silver_vehicle_gracefully_maneuvers_towards_a_modern_glass_building..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       </tr>
       <tr>
@@ -691,7 +795,51 @@ div[class^='image-gallery-slide-'] {
         <td align="center">Structure Sequence</td>
         <td align="center">Tune-A-Video</td>
         <td align="center">Text2Video-Zero</td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
         <td align="center">ControlVideo (Ours)</td>
+      </tr>
+    </table>
+    <p align="center"><span style="color: blue;">Text Prompt: A yellow duck moving on the river, anime style.</span></p>
+    <table align="center" style="width: 10%;">
+      <tr>
+        <td><video src="videos/rebuttal_results/failure_cases/blackswan/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/visualizations/canny/blackswan_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_blackswan/tav+A_yellow_duck_moving_on_the_river,_anime_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_blackswan/tvz+A_yellow_duck_moving_on_the_river,_anime_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_blackswan/vid2vid+A_yellow_duck_moving_on_the_river,_anime_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_blackswan/fatezero+A_yellow_duck_moving_on_the_river,_anime_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_blackswan/ours+A_yellow_duck_moving_on_the_river,_anime_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      </tr>
+      <tr>
+        <td align="center"><span style="color: blue;">Source Video</span></td>
+        <td align="center"><span style="color: blue;">Structure Sequence</span></td>
+        <td align="center"><span style="color: blue;">Tune-A-Video</span></td>
+        <td align="center"><span style="color: blue;">Text2Video-Zero</span></td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
+        <td align="center"><span style="color: blue;">ControlVideo (Ours)</span></td>
+      </tr>
+    </table>
+    <p align="center"><span style="color: blue;">Text Prompt: A lone camel strolls leisurely through the vast, arid expanse of the desert.</span></p>
+    <table align="center" style="width: 10%;">
+      <tr>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/visualizations/canny/camel_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/tav+A_lone_camel_strolls_leisurely_through_the_vast,_arid_expanse_of_the_desert..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/tvz+A_lone_camel_strolls_leisurely_through_the_vast,_arid_expanse_of_the_desert..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/vid2vid+A_lone_camel_strolls_leisurely_through_the_vast,_arid_expanse_of_the_desert..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/fatezero+A_lone_camel_strolls_leisurely_through_the_vast,_arid_expanse_of_the_desert..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+        <td><video src="videos/rebuttal_results/more_videos/canny_camel/ours+A_lone_camel_strolls_leisurely_through_the_vast,_arid_expanse_of_the_desert..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      </tr>
+      <tr>
+        <td align="center"><span style="color: blue;">Source Video</span></td>
+        <td align="center"><span style="color: blue;">Structure Sequence</span></td>
+        <td align="center"><span style="color: blue;">Tune-A-Video</span></td>
+        <td align="center"><span style="color: blue;">Text2Video-Zero</span></td>
+        <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+        <td align="center"><span style="color: blue;">FateZero</span></td>
+        <td align="center"><span style="color: blue;">ControlVideo (Ours)</span></td>
       </tr>
     </table>
     <hr>
@@ -708,6 +856,8 @@ div[class^='image-gallery-slide-'] {
       <td><video src="videos/comparisons/pose/tuneavideo_Iron_man_moonwalk_in_the_road.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/text2video-zero_Iron_man_moonwalk_in_the_road.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/follow-your-pose_Iron_man_moonwalk_in_the_road.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/vid2vid+Iron_man_moonwalk_in_the_road..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/fatezero+Iron_man_moonwalk_in_the_road..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/controlvideo_Iron_man_moonwalk_in_the_road.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
     </tr>
     <tr>
@@ -716,6 +866,8 @@ div[class^='image-gallery-slide-'] {
       <td align="center">Tune-A-Video</td>
       <td align="center">Text2Video-Zero</td>
       <td align="center">Follow-Your-Pose</td>
+      <td align="center"><span style="color: blue;"></span>Vid2Vid-Zero</td>
+      <td align="center"><span style="color: blue;"></span>FateZero</td>
       <td align="center">ControlVideo (Ours)</td>
     </tr>
   </table>
@@ -728,6 +880,8 @@ div[class^='image-gallery-slide-'] {
       <td><video src="videos/comparisons/pose/tuneavideo_A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/text2video-zero_A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/follow-your-pose_A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_dancing/vid2vid+A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_dancing/fatezero+A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/controlvideo_A_robot_dances_on_a_road,_animation_style.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
     </tr>
     <tr>
@@ -736,6 +890,8 @@ div[class^='image-gallery-slide-'] {
       <td align="center">Tune-A-Video</td>
       <td align="center">Text2Video-Zero</td>
       <td align="center">Follow-Your-Pose</td>
+      <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+      <td align="center"><span style="color: blue;">FateZero</span></td>
       <td align="center">ControlVideo (Ours)</td>
     </tr>
   </table>
@@ -748,6 +904,8 @@ div[class^='image-gallery-slide-'] {
       <td><video src="videos/comparisons/pose/tuneavideo_The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/text2video-zero_The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/follow-your-pose_The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_dancing/vid2vid+The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_dancing/fatezero+The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/comparisons/pose/controlvideo_The_astronaut_dances_in_futuristic_city,_cyberpunk_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
     </tr>
     <tr>
@@ -756,7 +914,32 @@ div[class^='image-gallery-slide-'] {
       <td align="center">Tune-A-Video</td>
       <td align="center">Text2Video-Zero</td>
       <td align="center">Follow-Your-Pose</td>
+      <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+      <td align="center"><span style="color: blue;">FateZero</span></td>
       <td align="center">ControlVideo (Ours)</td>
+    </tr>
+  </table>
+  <p align="center"><span style="color: blue;">Text Prompt: James bond moonwalk on the beach, animation style.</span></p>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/comparisons/pose/moonwalk_original.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/comparisons/pose/moonwalk_cond.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/tav+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/tvz+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/followyourpose+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/vid2vid+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/fatezero+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/more_videos/pose_moonwalk/ours+James_bond_moonwalk_on_the_beach,_animation_style..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td align="center"><span style="color: blue;">Source Video</span></td>
+      <td align="center"><span style="color: blue;">Structure Sequence</span></td>
+      <td align="center"><span style="color: blue;">Tune-A-Video</span>/td>
+      <td align="center"><span style="color: blue;">Text2Video-Zero</span></td>
+      <td align="center"><span style="color: blue;">Follow-Your-Pose</span></td>
+      <td align="center"><span style="color: blue;">Vid2Vid-Zero</span></td>
+      <td align="center"><span style="color: blue;">FateZero</span></td>
+      <td align="center"><span style="color: blue;">ControlVideo (Ours)</span></td>
     </tr>
   </table>
   <hr>
@@ -764,8 +947,60 @@ div[class^='image-gallery-slide-'] {
   <h2 id="Ablation studies" align="center">
     Ablation studies
   </h2>
+  <h3 id="Non-deterministric DDPM sampler" align="center">
+    <span style="color: blue;">Non-deterministric DDPM sampler</span>
+  </h3>
+  <p align="center">Text Prompt: A striking mallard floats effortlessly on the sparkling pond.</p>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/rebuttal_results/ddpm_sampler/depth_condition.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/ddpm_sampler/lambda0+A_striking_mallard_floats_effortlessly_on_the_sparkling_pond..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/ddpm_sampler/lambda0.5+A_striking_mallard_floats_effortlessly_on_the_sparkling_pond..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/ddpm_sampler/lambda1+A_striking_mallard_floats_effortlessly_on_the_sparkling_pond..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td align="center">Structure Sequence</td>
+      <td align="center">lambda=0.0</td>
+      <td align="center">lambda=0.5</td>
+      <td align="center">lambda=1.0</td>
+    </tr>
+  </table>
+  <hr>
+
+  <h3 id="Trade-off between text prompt and motion" align="center">
+    <span style="color: blue;">Trade-off between text prompt and motion</span>
+  </h3>
+  <p align="center">Text Prompt: A rabbit walks in the grasslands.</p>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/rebuttal_results/failure_cases/cows/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/cows/depth_midas_condition.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/cows/controlnet_scale1+A_rabbit_walks_in_the_grasslands..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/cows/controlnet_scale0.3+A_rabbit_walks_in_the_grasslands..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    </tr>
+  </table>
+  <p align="center">Text Prompt: A mallard swims in the river.</p>
+  <table align="center" style="width: 10%;">
+    <tr>
+      <td><video src="videos/rebuttal_results/failure_cases/blackswan/source_video.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/blackswan/depth_midas_condition.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/blackswan/controlnet_scale1+A_mallard_swims_in_the_river..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/failure_cases/blackswan/controlnet_scale0.3+A_mallard_swims_in_the_river..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+    </tr>
+    <tr>
+      <td align="center">Input Video</td>
+      <td align="center">Structure Sequence</td>
+      <td align="center">control_scale=1.0 (by default)</td>
+      <td align="center">control_scale=0.3</td>
+    </tr>
+  </table>
+  <hr>
+
   <h3 id="Effect of fully cross-frame interaction and interleaved-frame smoother" align="center">
     Effect of fully cross-frame interaction and interleaved-frame smoother
+  </h3>
+  <h3 align="center">
+    <span style="color: blue;">(Different number of key frames)</span>
   </h3>
   <p align="center">Text Prompt: A mighty elephant marches steadily through the rugged terrain.</p>
   <table align="center" style="width: 10%;">
@@ -774,17 +1009,24 @@ div[class^='image-gallery-slide-'] {
       <td><video src="videos/ablations/cross_frame/Individual-A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/ablations/cross_frame/First_only-A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/ablations/cross_frame/sparse_causal.mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
-      <!-- <td><video src="videos/ablations/cross_frame/Sparse_causal-A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td> -->
+    </tr>
+    <tr>
+      <td align="center">Source video</td>
+      <td align="center">Individual (k=0)</td>
+      <td align="center">First-only (k=1)</td>
+      <td align="center">Sparse-Causal (k=2)</td>
+    </tr>
+    <tr>
+      <td><video src="videos/rebuttal_results/key_frames/4frames+A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
+      <td><video src="videos/rebuttal_results/key_frames/8frames+A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/ablations/cross_frame/Fully-A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
       <td><video src="videos/ablations/cross_frame/Fully+smoother-A_mighty_elephant_marches_steadily_through_the_rugged_terrain..mp4" style="width: 125px; height: 125px;" autoplay muted loop></video></td>
     </tr>
     <tr>
-      <td align="center">Source video</td>
-      <td align="center">Individual</td>
-      <td align="center">First-only</td>
-      <td align="center">Sparse-Causal</td>
-      <td align="center">Fully Cross-frame</td>
-      <td align="center">Fully + Smoother</td>
+      <td align="center"><span style="color: blue;">Frame_ids={0,4,8,12} (k=4)</span></td>
+      <td align="center"><span style="color: blue;">Frame_ids={0,2,4,6,8,10,12,14} (k=8)</span></td>
+      <td align="center">Fully Cross-frame (k=15)</td>
+      <td align="center">Fully + Smoother (k=15)</td>
     </tr>
   </table>
   <hr>
